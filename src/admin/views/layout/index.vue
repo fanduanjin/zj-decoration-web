@@ -50,8 +50,11 @@ export default {
 }
 .body {
   flex: 1;
-  margin: 1rem;
+  padding: 1rem;
+  max-height:84vh;
   background: #fff;
+  overflow-x: hidden;
+  overflow-y:auto;
 }
 </style>
 

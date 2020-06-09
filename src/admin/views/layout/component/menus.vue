@@ -5,5 +5,11 @@
       <template slot="title">用户管理</template>
       <el-menu-item index="/admin/user">用户列表</el-menu-item>
     </el-submenu>
+    <el-submenu>
+      <template slot="title">商品管理</template>
+      <el-menu-item>商品列表</el-menu-item>
+      <el-menu-item>商品分类</el-menu-item>
+      <el-menu-item>商品类型</el-menu-item>
+    </el-submenu>
   </el-menu>
 </template>

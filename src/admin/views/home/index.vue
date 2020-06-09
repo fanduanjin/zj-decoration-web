@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>home/index</h1>
+    <h1>admin/home/index</h1>
 </div>
 
 </template>
@@ -14,6 +14,9 @@ export default {
             this.$router.push('/login');
             console.log('未登录 dispatch：login');
         }
+
+        var arr=[];
+        arr.replace([]);
     }
 }
 </script>

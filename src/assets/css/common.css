@@ -1,3 +1,48 @@
-.card_footer{
+.card_footer {
     padding: 20px 20px 0 0;
+}
+
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+.clear_float::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* 清除element tag 表现样式*/
+
+.clear_tag {
+    background: none;
+    border-color: transparent;
+    font-size: 1.1rem;
+    color: #303133;
+}
+
+::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 10px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgb(242, 246, 252);
+    background: teal;
+}
+
+::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px #f2f6fc;
+    border-radius: 10px;
+    background: #EDEDED;
 }
