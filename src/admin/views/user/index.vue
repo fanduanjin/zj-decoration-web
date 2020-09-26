@@ -3,7 +3,7 @@
     <el-card>
       <template slot="header">
         <el-tag class="clear_tag">用户列表</el-tag>
-        <el-button  type="primary" class="float_right">添加</el-button>
+        <!-- <el-button  type="primary" class="float_right" >添加</el-button> -->
       </template>
       <el-table :data="users" border>
         <el-table-column prop="id" label="ID" />

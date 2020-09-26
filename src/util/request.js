@@ -5,7 +5,7 @@ import auth from '@/util/auth'
 
 
 const service = axios.create({
-    baseURL: '/api/',
+    //baseURL: '/api/',
     timeout: 15000,
 });
 
@@ -23,9 +23,9 @@ const loaded = () => {
 
 service.interceptors.request.use(config => {
     loading();
-    var token=auth.getToken();
-    if(token){
-        config.headers['Authorization']=token;
+    var token = auth.getToken();
+    if (token) {
+        config.headers['Authorization'] = token;
     }
     return config
 }, error => {
@@ -41,7 +41,7 @@ service.interceptors.response.use(response => {
     var msg;
     loaded();
     if (res.code != 200) {
-        msg = '!:request status error:' + res.code + '  ' +JSON.stringify(res.msg);
+        msg = '!:request status error:' + res.code + '  ' + JSON.stringify(res.msg);
     } else if (res.code == 200) {
         res.flag = true;
     }
@@ -56,12 +56,12 @@ const handleRes = (res, callback, errorCallback) => {
     //处理自定义异常
     try {
         if (res instanceof Error) {
-            var error={};
-            error.msg=res.message;
-            error.flag=false;
-            res=error;            
-        } 
-        
+            var error = {};
+            error.msg = res.message;
+            error.flag = false;
+            res = error;
+        }
+
         if (res.flag) {
             if (callback && callback instanceof Function)
                 callback(res);
@@ -82,7 +82,7 @@ const handleRes = (res, callback, errorCallback) => {
 
 export default {
     put(url, params, callback, errorCallback) {
-        service.put(url,params).then(res => {
+        service.put(url, params).then(res => {
             handleRes(res, callback, errorCallback);
         }).catch(error => {
             handleRes(error, callback, errorCallback);
@@ -96,7 +96,7 @@ export default {
         });
     },
     post(url, params, callback, errorCallback) {
-        service.post(url,params).then(res => {
+        service.post(url, params).then(res => {
             handleRes(res, callback, errorCallback);
         }).catch(error => {
             handleRes(error, callback, errorCallback);

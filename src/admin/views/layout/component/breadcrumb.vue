@@ -1,12 +1,14 @@
 <template>
   <el-breadcrumb separator="/">
     <el-breadcrumb-item v-for="(item,index)  in levelList" :key="index">
-      <router-link :to="item.path">{{item.meta.title}}</router-link>
+      <router-link :to="item.path" @click="cc(item.path)">{{item.meta.title}}</router-link>
     </el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 
 <script>
+import {Menu} from 'element-ui'
+
 export default {
   created() {
     this.getBreadcrumb();
@@ -31,6 +33,9 @@ export default {
       }
       this.levelList = matched;
     }
+  },cc(path){
+    console.log(path);
+    Menu.open(path);
   }
 };
 </script>

@@ -27,13 +27,26 @@ export default [
     },
     {
         path: '/admin/goods',
-        meta: { title: '商品管理' }.title,
+        meta: { title: '商品管理' },
         component: Layout,
         children: [{
-            path: '',
-            meta: { title: '商品列表' },
-            component: () =>
-                import ('@/admin/views/goods')
-        }]
+                path: '',
+                meta: { title: '商品列表' },
+                component: () =>
+                    import ('@/admin/views/goods')
+            },
+            {
+                path: 'category',
+                meta: { title: '商品分类' },
+                component: () =>
+                    import ('@/admin/views/goods/category')
+            },
+            {
+                path: 'type',
+                meta: { title: '商品类型' },
+                component: () =>
+                    import ('@/admin/views/goods/type')
+            }
+        ]
     },
 ]

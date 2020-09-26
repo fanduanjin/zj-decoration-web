@@ -6,7 +6,7 @@ export default {
 
     login(username, password) {
 
-        request.get('account/login', { username, password }, (res) => {
+        request.get('/api/account/login', { username, password }, (res) => {
             var data = res.data;
             var token = data.token;
             var tokenHead = data.tokenHead;
@@ -20,12 +20,12 @@ export default {
         console.log('退出登陆');
     },
     sendRegistryCode(phoneNumber, success) {
-        request.get('account/sendRegistryCode', { phoneNumber }, success);
+        request.get('/api/account/sendRegistryCode', { phoneNumber }, success);
 
     },
     registry(user, validatorCode) {
         user.validatorCode = validatorCode;
-        request.put('account/registry', user, (res) => {
+        request.put('/api/account/registry', user, (res) => {
             var data = res.data;
             var token = data.token;
             var tokenHead = data.tokenHead;
