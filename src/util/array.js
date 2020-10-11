@@ -8,10 +8,7 @@ Array.prototype.replace = function(newArray) {
         var item = newArray[i];
         this.push(item);
     }
-    console.log('array replace');
-    console.log(this);
 }
-console.log('fdsfsd');
 
 Array.prototype.pushAll = function(arr) {
     for (var i = 0, l = arr.length; i < l; i++) {

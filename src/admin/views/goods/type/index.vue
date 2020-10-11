@@ -14,7 +14,7 @@
       </el-table-column>
       <el-table-column label="设置" align="center">
         <template slot-scope="scope">
-          <el-button size="small" @click="(scope.row)">属性设置</el-button>
+          <el-button size="small"  @click="goAttribute(scope.row)">属性设置</el-button>
           <el-button size="small">参数设置</el-button>
         </template>
       </el-table-column>
@@ -78,7 +78,6 @@ export default {
         this.types = data;
         this.pageInfo.total = res.data.total;
       });
-      console.log("init");
     },
     attributeSize(row) {
       return row.attributes ? row.attributes.length : 0;
@@ -138,7 +137,6 @@ export default {
         if (valid) {
           switch (this.actionType) {
             case 1:
-              console.log("submit");
               goodsTypeApi.insert(this.actionModel, () => {
                 this.$message({ message: "添加成功", type: "success" });
                 this.closeDialog();
@@ -156,6 +154,9 @@ export default {
           }
         }
       });
+    },
+    goAttribute(row){
+      this.$router.push('/admin/goods/typeAttribute?typeId='+row.id);
     }
   }
 };

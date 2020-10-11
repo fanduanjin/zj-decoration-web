@@ -11,7 +11,7 @@ export default [
             path: '',
             meta: { title: '首页' },
             component: () =>
-                import ('@/admin/views')
+                import('@/admin/views')
         }]
     },
     {
@@ -22,7 +22,7 @@ export default [
             path: '',
             meta: { title: '用户列表' },
             component: () =>
-                import ('@/admin/views/user')
+                import('@/admin/views/user')
         }]
     },
     {
@@ -30,23 +30,30 @@ export default [
         meta: { title: '商品管理' },
         component: Layout,
         children: [{
-                path: '',
-                meta: { title: '商品列表' },
-                component: () =>
-                    import ('@/admin/views/goods')
-            },
-            {
-                path: 'category',
-                meta: { title: '商品分类' },
-                component: () =>
-                    import ('@/admin/views/goods/category')
-            },
-            {
-                path: 'type',
-                meta: { title: '商品类型' },
-                component: () =>
-                    import ('@/admin/views/goods/type')
-            }
+            path: '',
+            meta: { title: '商品列表' },
+            component: () =>
+                import('@/admin/views/goods')
+        },
+        {
+            path: 'category',
+            meta: { title: '商品分类' },
+            component: () =>
+                import('@/admin/views/goods/category')
+        },
+        {
+            path: 'type',
+            meta: { title: '商品类型' },
+            component: () =>
+                import('@/admin/views/goods/type')
+
+        },
+        {
+            path: 'typeAttribute',
+            meta: { title: '类型属性' },
+            component: () =>
+                import('@/admin/views/goods//type/attribute')
+        }
         ]
     },
 ]
